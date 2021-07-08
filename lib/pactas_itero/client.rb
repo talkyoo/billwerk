@@ -51,6 +51,7 @@ module PactasItero
     end
 
     def request(method, path, params = {})
+      puts "-->> PactasItero::Client.request method: #{method}, path: #{path}, params: #{params}" if dbg
       headers = params.delete(:headers) || {}
       if accept = params.delete(:accept)
         headers[:accept] = accept
@@ -69,6 +70,7 @@ module PactasItero
       response = connection.send(method.to_sym, path, params) {
         |request| request.headers.update(headers)
       }.env
+      puts "-->> PactasItero::Client.request response.body: #{response.body}" if dbg
       response.body
     end
 

@@ -12,6 +12,8 @@ module PactasItero
     PRODUCTION_API_ENDPOINT = "https://app.billwerk.com".freeze
 
     PRODUCTION = false
+  
+    DBG = false
 
     USER_AGENT   = "Pactas.Itero Ruby Gem #{PactasItero::VERSION}".freeze
 
@@ -47,6 +49,10 @@ module PactasItero
 
       def production
         PRODUCTION
+      end
+
+      def dbg
+        DBG
       end
 
       def client_id

@@ -2,7 +2,7 @@ module PactasItero
 
   module Configurable
     attr_accessor :bearer_token, :client_id, :client_secret, :user_agent,
-                  :default_media_type, :middleware, :production
+                  :default_media_type, :middleware, :production, :dbg
     attr_writer :api_endpoint
     class << self
 
@@ -16,7 +16,8 @@ module PactasItero
           :user_agent,
           :default_media_type,
           :middleware,
-          :production
+          :production,
+          :dbg
         ]
       end
     end
