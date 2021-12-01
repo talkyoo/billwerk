@@ -35,6 +35,16 @@ module PactasItero
         options = options.camelize_keys
         post "api/v1/contracts/#{contract_id}/end", options
       end
+
+      def get_contract_component_subscriptions(contract_id, options = {})
+        options = options.camelize_keys
+        get "api/v1/contracts/#{contract_id}/componentSubscriptions", options
+      end
+
+      def post_contract_component_subscriptions(contract_id, options = {})
+        options = options.camelize_keys
+        post "api/v1/contracts/#{contract_id}/componentSubscriptions", options
+      end
     end
   end
 end
